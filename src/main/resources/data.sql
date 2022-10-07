@@ -1,0 +1,2 @@
+INSERT INTO PRODUCT (name, email, phone, product, serialNumber, purchasePrice, purchaseDate, contact) VALUES ('Beatriz', 'Beatriz.Amaral@br.bosch.com', '19111111111', 'bicicleta', '0000001', '179.90', '2021-10-06', true);
+INSERT INTO PRODUCT (name, email, phone, product, serialNumber, purchasePrice, purchaseDate, contact) VALUES ('Edna', 'ednaabreu3@hotmail.com', '19222222222', 'celular', '0000002', '1999.90', '2021-10-05', false);
