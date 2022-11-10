@@ -15,8 +15,6 @@ public class ProductController {
     @Autowired
     ProductService productService;
 
-
-
     //list products
     @GetMapping
     public List<Product> getAllProduct() {
