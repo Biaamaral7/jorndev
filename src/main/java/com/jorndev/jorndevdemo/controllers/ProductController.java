@@ -45,8 +45,6 @@ public class ProductController extends RuntimeException{
         productService.delete(id);
     }
 
-
-
     @ExceptionHandler(NoSuchElementException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
     public String handleExceptions(HttpServletRequest request, Exception e) {
