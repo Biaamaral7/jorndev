@@ -1,16 +1,21 @@
 package com.jorndev.jorndevdemo.models;
 
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 
 @Entity
+@Getter
+@NoArgsConstructor
 @Table
 public class User {
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(nullable = false)
+    @Column
     private String name;
     @Column
     private String email;
@@ -21,6 +26,13 @@ public class User {
     @Column
     private boolean admin=false;
 
+
+    public User(String name, String email, String phone, String password) {
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+        this.password = password;
+    }
 
     public Integer getId() {
         return id;

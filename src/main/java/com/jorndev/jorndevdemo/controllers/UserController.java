@@ -1,6 +1,8 @@
 package com.jorndev.jorndevdemo.controllers;
 
 
+import com.jorndev.jorndevdemo.dto.UserDTO;
+import com.jorndev.jorndevdemo.dto.UserResponseDTO;
 import com.jorndev.jorndevdemo.models.User;
 import com.jorndev.jorndevdemo.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,9 +24,9 @@ public class UserController {
     }
 
     @PostMapping
-    public ResponseEntity<User> saveUser(@RequestBody UserDTO userdto) {
-        userService.saveUser(userdto);
-        return new ResponseEntity<>(user, HttpStatus.CREATED);
+    public ResponseEntity<UserResponseDTO> createUser(@RequestBody UserDTO userdto) {
+        User user = userService.createUser(userdto.userObject());
+        return new ResponseEntity<>(UserResponseDTO.userObject(user), HttpStatus.CREATED);
     }
 
 }
