@@ -17,7 +17,7 @@ public class Product {
     @Column(nullable = false)
     private String serialNumber;
     @Column(nullable = false)
-    private BigDecimal purchasePrice;
+    private BigDecimal productPrice;
     @Column(nullable = false)
     private Date purchaseDate;
 
@@ -46,12 +46,12 @@ public class Product {
         this.serialNumber = serialNumber;
     }
 
-    public BigDecimal getPurchasePrice() {
-        return purchasePrice;
+    public BigDecimal getProductPrice() {
+        return productPrice;
     }
 
-    public void setPurchasePrice(BigDecimal purchasePrice) {
-        this.purchasePrice = purchasePrice;
+    public void setProductPrice(BigDecimal productPrice) {
+        this.productPrice = productPrice;
     }
 
     public Date getPurchaseDate() {

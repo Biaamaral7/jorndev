@@ -13,7 +13,7 @@ import java.util.NoSuchElementException;
 
 @RestController
 @RequestMapping("/api/v1/products")
-public class ProductController extends RuntimeException{
+public class ProductController {
 
     @Autowired
     ProductService productService;
@@ -45,24 +45,7 @@ public class ProductController extends RuntimeException{
         productService.delete(id);
     }
 
-    @ExceptionHandler(NoSuchElementException.class)
-    @ResponseStatus(HttpStatus.NOT_FOUND)
-    public String handleExceptions(HttpServletRequest request, Exception e) {
-        String method = request.getMethod();
-        return "Cannot" + method + " this request. Exception: " + e.getMessage();
-    }
 
-    @ExceptionHandler(HttpMessageNotReadableException.class)
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public String handleMessageNotReadableException() {
-        return "Wrong format";
-    }
-
-    @ExceptionHandler(Exception.class)
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public String handleAllExceptions() {
-        return "Something went wrong";
-    }
 
 
 
