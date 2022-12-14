@@ -23,7 +23,6 @@ public class User {
     private String phone;
     @Column(nullable = false)
     private String password;
-    @Column
     private boolean admin=false;
 
 
